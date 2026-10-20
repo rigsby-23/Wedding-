@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: #d0b9a5;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, serif;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .design {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .welcome-button {
+      position: absolute;
+      left: 9.5%;
+      top: 75.8%;
+      width: 50%;
+      height: 6.8%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .location-button {
+      position: absolute;
+      left: 30%;
+      top: 77.2%;
+      width: 40%;
+      height: 4%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .animate {
+      animation: appear 1.1s ease both;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .animate {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE 1: YOUR ORIGINAL WELCOME DESIGN -->
+  <section class="page" id="welcome">
+    <img
+      src="welcome.png"
+      alt="Wedding welcome invitation"
+      class="design"
+    >
+
+    <button
+      class="welcome-button"
+      aria-label="View Invitation"
+      onclick="document.getElementById('moments').scrollIntoView({behavior:'smooth'})">
+    </button>
+  </section>
+
+  <!-- PAGE 2: YOUR ORIGINAL MOMENTS OF LOVE DESIGN -->
+  <section class="page animate" id="moments">
+    <img
+      src="moments.jpg"
+      alt="Moments of Love wedding invitation"
+      class="design"
+    >
+  </section>
+
+  <!-- PAGE 3: YOUR ORIGINAL RECEPTION DESIGN -->
+  <section class="page animate" id="bigday">
+    <img
+      src="bigday.jpg"
+      alt="Wedding reception details"
+      class="design"
+    >
+
+    <button
+      class="location-button"
+      aria-label="View Location"
+      onclick="window.open('https://www.google.com/maps/search/?api=1&query=TMA+Hall+Pathiripadam+Palunda+Road','_blank')">
+    </button>
+  </section>
+
+</body>
+</html>
