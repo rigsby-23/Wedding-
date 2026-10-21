@@ -94,7 +94,23 @@
 </head>
 
 <body>
+<audio id="weddingMusic" loop preload="auto">
+  <source src="zariya.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+  const music = document.getElementById("weddingMusic");
+
+  if (sessionStorage.getItem("playWeddingMusic") === "yes") {
+    sessionStorage.removeItem("playWeddingMusic");
+
+    music.play().catch(() => {
+      document.addEventListener("click", function startMusic() {
+        music.play().catch(() => {});
+      }, { once: true });
+    });
+  }
+</script>
   <!-- MOMENTS OF LOVE -->
   <section class="page animate">
     <img
