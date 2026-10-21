@@ -34,7 +34,17 @@
   display: block;
   width: 100%;
   height: auto;
-  animation: waveMove 3s ease-in-out infinite;
+  animation: waveMove 2s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-30px);
+  }
 }
 
 @keyframes waveMove {
