@@ -1,36 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moments of Love</title>
+  <title>Our Wedding Invitation</title>
 
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
+    html {
+      scroll-behavior: smooth;
       background: #d0b9a5;
     }
 
-    img {
-      display: block;
+    body {
+      margin: 0;
+      padding: 0;
+      background: #d0b9a5;
+      font-family: Georgia, serif;
+    }
+
+    .page {
+      position: relative;
       width: 100%;
       max-width: 600px;
-      height: auto;
       margin: 0 auto;
-      animation: appear 1s ease;
+    }
+
+    .design {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .animate {
+      animation: appear 1s ease both;
+    }
+
+    .location-button {
+      position: absolute;
+      left: 30%;
+      top: 77.2%;
+      width: 40%;
+      height: 4%;
+      border: none;
+      border-radius: 30px;
+      background: transparent;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
 
     @keyframes appear {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      img {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .animate {
         animation: none;
       }
     }
@@ -39,10 +79,29 @@
 
 <body>
 
-  <img
-    src="moments.jpg"
-    alt="Moments of Love wedding invitation"
-  >
+  <!-- MOMENTS OF LOVE -->
+  <section class="page animate">
+    <img
+      src="moments.jpg"
+      alt="Moments of Love wedding invitation"
+      class="design"
+    >
+  </section>
+
+  <!-- THE BIG DAY: CONTINUES BELOW MOMENTS OF LOVE -->
+  <section class="page animate">
+    <img
+      src="bigday.jpg"
+      alt="The Big Day wedding invitation"
+      class="design"
+    >
+
+    <button
+      class="location-button"
+      aria-label="View Location"
+      onclick="window.open('https://www.google.com/maps/search/?api=1&query=TMA+Hall+Pathiripadam+Palunda+Road','_blank')">
+    </button>
+  </section>
 
 </body>
 </html>
