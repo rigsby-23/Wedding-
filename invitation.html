@@ -31,10 +31,21 @@
     }
 
     .design {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: waveMove 3s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
 
     . .animate {
   animation: appear 1.5s ease both;
